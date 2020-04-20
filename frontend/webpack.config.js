@@ -68,13 +68,14 @@ module.exports = {
     port: 80,
     host: '0.0.0.0',
     hot: true,
-    sockPort: 443,
+    // TODO make port configurable sockPort: 443,
     disableHostCheck: true,
     watchOptions: {
       poll: true
     },
     proxy: {
-      '/api': 'http://movies-api:8080'
+      // TODO make server name configurable '/api': 'http://movies-api:8080'
+      '/api': 'http://localhost:8080'
     }
   }
 };
