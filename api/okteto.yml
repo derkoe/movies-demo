@@ -1,7 +1,6 @@
 name: movies-api
-image: ramiro/movies-api
+image: derkoe/movies-api
 workdir: /src
-command: ["bash"]
+command: ["sh"]
 forward:
-  - 8080:8080
-  - 9229:9229
+  - 8081:8081

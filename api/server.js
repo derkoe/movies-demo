@@ -20,7 +20,7 @@ function startWithRetry() {
 
     const db = client.db(process.env.MONGODB_DATABASE);
 
-    app.listen(8080, () => {
+    app.listen(8081, () => {
       app.get("/api/healthz", (req, res, next) => {
         res.sendStatus(200)
         return;
@@ -51,7 +51,7 @@ function startWithRetry() {
         });
       });
 
-      console.log("Server running on port 8080.");
+      console.log("Server running on port 8081.");
     });
   });
 };

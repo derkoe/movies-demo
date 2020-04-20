@@ -2,29 +2,29 @@ name: movies
 services:
   movies:
     public: true
-    image: ramiro/movies-proxy
+    image: derkoe/movies-proxy
     ports:
       - 80
 
   movies-frontend:
     public: false
-    image: ramiro/movies-frontend
+    image: derkoe/movies-frontend
     ports:
-      - 80
+      - 8080
 
   movies-api:
     public: false
-    image: ramiro/movies-api
+    image: derkoe/movies-api
     environment:
       - MONGODB_USERNAME="okteto"
       - MONGODB_PASSWORD="mongodb123"
       - MONGODB_DATABASE="okteto"
       - MONGODB_HOST="mongodb"
     ports:
-      - 8080
+      - 8081
 
   movies-job:
-    image: ramiro/movies-api
+    image: derkoe/movies-api
     command: yarn load
     environment:
       - MONGODB_USERNAME="okteto"

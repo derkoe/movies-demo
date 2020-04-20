@@ -1,4 +1,4 @@
 .PHONY: push
 push:
-	okteto build -t ramiro/movies-frontend:dev --target dev .
-	okteto build -t ramiro/movies-frontend .
+	okteto build -t derkoe/movies-frontend:dev --target dev .
+	okteto build -t derkoe/movies-frontend .

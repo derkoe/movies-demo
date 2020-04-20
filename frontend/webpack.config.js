@@ -65,17 +65,16 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    port: 80,
+    port: 8080,
     host: '0.0.0.0',
     hot: true,
-    // TODO make port configurable sockPort: 443,
+    sockPort: process.env.OKTEKO ? 443 : 8080,
     disableHostCheck: true,
     watchOptions: {
       poll: true
     },
-    proxy: {
-      // TODO make server name configurable '/api': 'http://movies-api:8080'
-      '/api': 'http://localhost:8080'
+    proxy: {      
+      '/api': process.env.OKTEKO ? 'http://movies-api:8080' : 'http://localhost:8081'
     }
   }
 };
